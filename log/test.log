@@ -28,3 +28,25 @@ Processing by BrainsController#index as HTML
   Rendered brains/index.html.erb within layouts/application (2.6ms)
 Completed 200 OK in 35ms (Views: 21.9ms | ActiveRecord: 0.6ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (15.8ms)[0m  CREATE TABLE "brains" ("id" serial primary key, "animal" character varying(255), "body" float, "brain" float) 
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.5ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140909194517')
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-09-11 09:11:39 -0600
+Processing by BrainsController#index as HTML
+  [1m[36mBrain Load (0.4ms)[0m  [1mSELECT "brains".* FROM "brains"[0m
+  Rendered brains/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 808ms (Views: 798.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2014-09-11 09:12:12 -0600
+Processing by BrainsController#index as HTML
+  [1m[36mBrain Load (0.4ms)[0m  [1mSELECT "brains".* FROM "brains"[0m
+  Rendered brains/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 35ms (Views: 25.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
